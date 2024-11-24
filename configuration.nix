@@ -20,6 +20,7 @@
       tmux
       tree
       watchexec
+      xsel
     ];
   };
 
