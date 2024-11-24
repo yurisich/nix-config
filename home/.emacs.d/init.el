@@ -132,9 +132,6 @@ Taken from https://stackoverflow.com/a/4717026/881224"
 (use-package lsp-mode
   :ensure t)
 
-(straight-use-package 'tree-sitter)
-(straight-use-package 'tree-sitter-langs)
-
 ;; ---
 
 (use-package emacs-lisp-mode
@@ -189,6 +186,11 @@ Taken from https://stackoverflow.com/a/4717026/881224"
 
 (use-package terraform-mode
   :mode "\\.tf\\'")
+
+(use-package typescript-ts-mode
+  :straight (:type built-in)
+  :defer t
+  :mode "\\.tsx?\\'")
 
 ;; ---
 
