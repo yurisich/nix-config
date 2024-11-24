@@ -10,8 +10,10 @@
       git
       gnumake
       gnupg
+      htop
       nix-search-cli
       pass
+      silver-searcher
       starship
       tmux
     ];
