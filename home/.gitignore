@@ -1,0 +1,12 @@
+.DS_Store
+
+# emacs temporary backup files
+\.#*
+*#*#
+*~
+
+# flycheck temporary lint files
+*flycheck_*\.py
+
+.env
+.venv

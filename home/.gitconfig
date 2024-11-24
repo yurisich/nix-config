@@ -1,0 +1,74 @@
+[user]
+        name = yurisich
+        email = andrew@yurisich.com
+        signingkey = 30AF72AC6FB8F89C!
+[color]
+        diff = always
+        status = always
+        branch = auto
+        interactive = auto
+        ui = true
+        pager = true
+[color "branch"]
+        current = yellow
+        local = dim yellow
+        remote = magenta
+[color "diff"]
+        meta = yellow
+        frag = dim white
+        old = red
+        new = cyan
+        whitespace = white reverse
+[color "status"]
+        added = cyan
+        changed = red
+        untracked = yellow
+        remoteBranch = bold red
+[alias]
+        aa = add -A
+        br = branch -a --no-merged
+        ci = commit
+        co = checkout
+        cp = cherry-pick
+        df = diff
+        dfc = diff --cached
+        l = log --pretty=tformat:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+        lg = !git l -n # number of commits
+        lgg = !git l -n 5
+        origin = push origin -q
+        rip = commit --amend --no-edit
+        split = reset HEAD^
+        st = status -sb
+        update = "!git fetch --all --prune; git branch --no-contains HEAD --no-color --merged | xargs -n 1 git branch -d"
+	unadd = reset
+        use-main = "checkout --ours" # files
+        use-branch = "checkout --theirs" # files
+[pager]
+        st = true
+        df = true
+        dfc = true
+[push]
+        default = current
+        followTags = true
+[pull]
+	rebase = true
+[init]
+        defaultBranch = main
+[core]
+        editor = emacsclient
+[commit]
+        gpgsign = true
+[url "https://"]
+        insteadOf = git://
+[filter "lfs"]
+        clean = git-lfs clean %f
+        smudge = git-lfs smudge %f
+        required = true
+[url "https://github.com/"]
+        insteadOf = git://github.com/
+[diff]
+        renameLimit = 9999
+[merge]
+        conflictStyle = diff3
+[reset]
+        quiet = true

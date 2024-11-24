@@ -1,0 +1,7 @@
+## arrow up
+"\e[A":history-search-backward
+## arrow down
+"\e[B":history-search-forward
+
+"\e[1;3D":backward-word
+"\e[1;3C":forward-word

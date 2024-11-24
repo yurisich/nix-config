@@ -1,0 +1,59 @@
+format = '''
+$character$fill
+
+$time [\(](dimmed white)$cmd_duration[\)](dimmed white)
+[pwd:](bold purple) $directory
+[git:](bold cyan) $git_branch[@](dimmed white)$git_commit$git_state $git_metrics
+${custom.git_status_sb}
+\$> 
+'''
+
+[fill]
+symbol = '_'
+
+[time]
+format = '[$time$utc_time_offset]($style)'
+style = 'bright-black'
+time_format = '%FT%TZ'
+utc_time_offset = '0'
+disabled = false
+
+[cmd_duration]
+format = '[$duration](dimmed white)'
+min_time = 0
+show_milliseconds = true
+
+[directory]
+truncation_length = 127
+style = 'dimmed purple'
+truncate_to_repo = false
+
+[git_branch]
+format = '[$branch](dimmed green)'
+truncation_length = 63
+
+[git_commit]
+format = '[$tag](dimmed yellow):[$hash](dimmed red)'
+only_detached = false
+
+[git_metrics]
+format = '[\(](dimmed white)[+$added]($added_style)[,](dimmed white) [-$deleted]($deleted_style)[\)](dimmed white)'
+disabled = false
+added_style = 'dimmed cyan'
+deleted_style = 'dimmed red'
+ignore_submodules = true
+only_nonzero_diffs = false
+
+[env_var.quiet]
+disabled = true
+
+[custom.git_status_sb]
+command = ''' git status -sb | sed '1 s/^.*$/status:/' '''
+when = true
+require_repo = true
+style = ''
+
+[character]
+format = '$symbol'
+success_symbol = '[___________________________](green)'
+error_symbol = '[___________________________](red)'
