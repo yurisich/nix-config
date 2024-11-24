@@ -1,5 +1,5 @@
 #!/bin/bash
-export SHELL="/bin/bash"
+export SHELL="$(which bash)"
 export EDITOR="emacsclient"
 export XDG_CONFIG_HOME="$HOME"
 
