@@ -17,6 +17,7 @@
       silver-searcher
       starship
       tmux
+      tree
       watchexec
     ];
   };
