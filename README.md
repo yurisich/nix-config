@@ -2,10 +2,13 @@
 
 This is a minimal example of using nixOS at arguably its least capability. It does simplify a lot of things in my previous iterations of maintaining dotfiles, so if you're looking for a way to manage the bare minimum to start spinning up flakes this should be enough to get started.
 
+![The end result of the terminal installed.](https://github.com/user-attachments/assets/816af49c-91fb-4644-84b6-d5116f03bef6)
+
 ## pre-requisites
 
 - A yubikey acting as a gpg smart card, with a gpg key on it.
-- An existing github account with your user profile's .gpg endpoint correctly configured. E.g., https://github.com/yurisich.gpg
+- An existing github account with your user profile's .gpg endpoint correctly configured.
+ - E.g., https://github.com/yurisich.gpg
 - *Optional*: an existing .password-store directory that you use via your yubikey.
 
 ## installing
@@ -70,7 +73,7 @@ export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
 Test that you can login with your yubikey.
 
-```sh
+```
 ssh -T git@github.com
 Hi yurisich! You've successfully authenticated, but GitHub does not provide shell access.
 ```
@@ -98,7 +101,7 @@ git clone git@github.com:yurisich/.password-store.git
 
 You could log into github now using firefox, which should be already available.
 
-```sh
+```
 pass -c github.com/yurisich
 Copied github.com/yurisich to clipboard. Will clear in 45 seconds.
 ```
