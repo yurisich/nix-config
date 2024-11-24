@@ -13,9 +13,11 @@
       htop
       nix-search-cli
       pass
+      python3
       silver-searcher
       starship
       tmux
+      watchexec
     ];
   };
 
