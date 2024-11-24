@@ -93,6 +93,8 @@ Taken from https://stackoverflow.com/a/4717026/881224"
   (server-start)
   (set-face-attribute 'default nil :height 150)
   (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+  (setq create-lockfiles nil)
+  (setq backup-directory-alist '(("." . "~/.emacs.d/auto-save-list")))
   (setq confirm-kill-emacs 'y-or-n-p)
   (setq inhibit-startup-message t)
   (setq ring-bell-function 'ignore)
