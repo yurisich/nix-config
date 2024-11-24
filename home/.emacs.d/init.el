@@ -107,19 +107,6 @@ Taken from https://stackoverflow.com/a/4717026/881224"
   (winner-mode 1)
   )
 
-
-(use-package backup-each-save
-  :hook after-save
-  :init
-  (setq
-   backup-by-copying t
-   backup-directory-alist
-   '(("." . "~/.emacs.d/auto-save-list"))
-   delete-old-versions t
-   kept-new-versions 20
-   kept-old-versions 0
-   version-control t))
-
 (straight-use-package 'eglot)
 (require 'eglot)
 (add-hook 'eglot--managed-mode-hook (lambda () (add-hook 'before-save-hook #'eglot-format-buffer nil nil)))
@@ -203,9 +190,7 @@ Taken from https://stackoverflow.com/a/4717026/881224"
 (use-package terraform-mode
   :mode "\\.tf\\'")
 
-
 ;; ---
-
 
 (use-package multiple-cursors
   :bind (("C-c C-S-c" . mc/edit-lines)
