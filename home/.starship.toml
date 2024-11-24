@@ -44,9 +44,6 @@ deleted_style = 'dimmed red'
 ignore_submodules = true
 only_nonzero_diffs = false
 
-[env_var.quiet]
-disabled = true
-
 [custom.git_status_sb]
 command = ''' git status -sb | sed '1 s/^.*$/status:/' '''
 when = true
