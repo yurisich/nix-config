@@ -12,3 +12,6 @@ links/%:
 
 home/.bash_profile.source:
 	source home/.bash_profile
+
+~/.emacs.d/tree-sitter/%:
+	nix-shell -p gcc --run "./home/.emacs.d/tree-sitter-install.sh $*"
