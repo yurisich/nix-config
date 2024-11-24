@@ -20,4 +20,6 @@ export HISTTIMEFORMAT='%F %T '
 export STARSHIP_CONFIG="$HOME/.starship.toml"
 eval "$(starship init bash)"
 
+eval "$(direnv hook bash)"
+
 source "$HOME"/.bash_aliases

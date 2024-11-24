@@ -6,6 +6,7 @@
     description = "Andrew Yurisich";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      direnv
       emacs
       git
       gnumake
