@@ -211,5 +211,13 @@ Taken from https://stackoverflow.com/a/4717026/881224"
   (set-face-background 'git-gutter:deleted  "#803C3C")
   (git-gutter-mode 1))
 
+(use-package with-editor
+  :hook (('shell-mode-hook  'with-editor-export-editor)
+         ('shell-mode-hook 'with-editor-export-git-editor)))
+
+(use-package git-commit
+  :ensure t
+  :init (ignore-errors (magit)))
+
 (provide 'init)
 ;;; init.el ends here
