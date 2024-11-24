@@ -8,7 +8,7 @@ This is a minimal example of using nixOS at arguably its least capability. It do
 
 - A yubikey acting as a gpg smart card, with a gpg key on it.
 - An existing github account with your user profile's .gpg endpoint correctly configured.
- - E.g., https://github.com/yurisich.gpg
+  - E.g., https://github.com/yurisich.gpg
 - *Optional*: an existing .password-store directory that you use via your yubikey.
 
 ## installing
@@ -152,5 +152,5 @@ Go to the "Command" tab, and do these steps:
 - check "Run command as a login shell"
 - check "Run a custom command instead of my shell"
 - in "Custom command", enter `/home/yurisich/.tmux.setup`
- - (use your name, not mine)
+  - (use your name, not mine)
 - for "When command exits", select "Hold the terminal open".
