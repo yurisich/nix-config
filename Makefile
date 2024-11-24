@@ -1,4 +1,7 @@
-all: links/home
+default: /etc/nixos/configuration.nix
+
+/etc/nixos/configuration.nix: configuration.nix
+	sudo nixos-rebuild switch
 
 links/%:
 	@cd $*; for dotfile in $$(find . -type f); do \
