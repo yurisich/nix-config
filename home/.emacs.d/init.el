@@ -179,6 +179,8 @@ Taken from https://stackoverflow.com/a/4717026/881224"
   :config
   (setq tab-width 2))
 
+(use-package nix-mode
+  :mode "\\.nix\\'")
 
 (use-package protobuf-mode
   :mode "\\.proto\\'")
