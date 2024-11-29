@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports =
+    [
+      /home/yurisich/nix-config/configuration-extras.nix
+    ];
+
   users.users.yurisich = {
     isNormalUser = true;
     description = "Andrew Yurisich";
