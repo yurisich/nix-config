@@ -154,3 +154,22 @@ Go to the "Command" tab, and do these steps:
 - in "Custom command", enter `/home/yurisich/.tmux.setup`
   - (use your name, not mine)
 - for "When command exits", select "Hold the terminal open".
+
+### adding more disks
+
+Taken from this [Stackoverflow answer](https://unix.stackexchange.com/a/218050):
+
+```sh
+sudo fdisk -l
+```
+
+Find the disk to mount.
+
+```sh
+sudo mkdir -p /mnt/whatever
+sudo mount /dev/sdX /mnt/whatever
+```
+
+Where `/dev/sdX` is the disk to mount.
+
+Run `nixos-generate-config` and then re-run `make` to rebuild and switch to the new derivation.
