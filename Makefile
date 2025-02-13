@@ -3,6 +3,9 @@ default: links /etc/nixos/configuration.nix home/.bash_profile.source
 /etc/nixos/configuration.nix: configuration.nix
 	sudo nixos-rebuild switch
 
+upgrade:
+	sudo nixos-rebuild switch --upgrade
+
 links: links/home
 links/%:
 	@cd $*; for dotfile in $$(find . -type f); do \
