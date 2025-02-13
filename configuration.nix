@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports =
@@ -48,4 +48,6 @@
     KERNEL=="hidraw*", ATTRS{idVendor}=="d13e", ATTRS{idProduct}=="cc10", GROUP="wheel", MODE="0666"
     KERNEL=="hidraw*", ATTRS{idVendor}=="2c97", MODE="0666"
   '';
+
+  system.stateVersion = lib.mkDefault "24.11";
 }
