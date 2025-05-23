@@ -4,7 +4,7 @@ default: links /etc/nixos/configuration.nix home/.bash_profile.source
 	sudo nixos-rebuild switch
 
 upgrade:
-	sudo nix-channel --add https://channels.nixos.org/nixos-24.11 nixos
+	sudo nix-channel --add https://channels.nixos.org/nixos-25.05 nixos
 	sudo nixos-rebuild switch --upgrade
 
 links: links/home
