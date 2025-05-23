@@ -19,6 +19,8 @@
       git
       gnumake
       gnupg
+      go
+      gopls
       htop
       nix-search-cli
       pass

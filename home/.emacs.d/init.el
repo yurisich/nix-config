@@ -115,6 +115,12 @@ Taken from https://stackoverflow.com/a/4717026/881224"
 (use-package exec-path-from-shell
   :config (exec-path-from-shell-initialize))
 
+(use-package go-mode
+  :mode "\\.go\\'"
+  :hook
+  (before-save-hook . gofmt-before-save)
+  (go-mode-hook . (lambda () (setq tab-width 4))))
+
 (use-package helm
   :bind (([remap list-buffers] . helm-buffers-list)
          ("M-x" . helm-M-x)
@@ -131,6 +137,7 @@ Taken from https://stackoverflow.com/a/4717026/881224"
   :bind ("C-c a g" . helm-do-ag-project-root))
 
 (use-package lsp-mode
+  :hook ((go-mode) . lsp)
   :ensure t)
 
 ;; ---
