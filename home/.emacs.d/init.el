@@ -109,10 +109,6 @@ Taken from https://stackoverflow.com/a/4717026/881224"
   (winner-mode 1)
   )
 
-(straight-use-package 'eglot)
-(require 'eglot)
-(add-hook 'eglot--managed-mode-hook (lambda () (add-hook 'before-save-hook #'eglot-format-buffer nil nil)))
-
 (use-package exec-path-from-shell
   :config (exec-path-from-shell-initialize))
 
