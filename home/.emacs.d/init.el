@@ -98,6 +98,7 @@ Taken from https://stackoverflow.com/a/4717026/881224"
   (setq confirm-kill-emacs 'y-or-n-p)
   (setq inhibit-startup-message t)
   (setq ring-bell-function 'ignore)
+  (setq tab-width 4)
   (setq tramp-default-method "ssh")
   (setq warning-minimum-level :error)
   (setq-default indent-tabs-mode nil)
