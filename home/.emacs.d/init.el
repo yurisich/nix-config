@@ -74,7 +74,7 @@ Taken from https://stackoverflow.com/a/4717026/881224"
          ("M-s-<up>" . windmove-up)
          ("s-{" . previous-buffer)
          ("s-}" . next-buffer)
-         ("s-k" . kill-this-buffer)
+         ("s-k" . kill-current-buffer)
          ("M-k" . nil)
          ("s-u" . revert-buffer)
          ("M-u" . nil)
