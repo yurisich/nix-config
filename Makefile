@@ -10,6 +10,7 @@ upgrade:
 links: links/home
 links/%:
 	@cd $*; for dotfile in $$(find . -type f); do \
+	  mkdir -p $$(dirname $(abspath $(HOME)/"$$dotfile")); \
 	  echo "ln $(abspath $(PWD)/$*/$$dotfile) -> $(abspath $(HOME)/$$dotfile"); \
 	  ln -sf $(abspath $(PWD)/$*/"$$dotfile") $(abspath $(HOME)/"$$dotfile"); \
 	done
