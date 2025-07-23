@@ -24,7 +24,7 @@ Choose Cinnamon as the desktop.
 Open a terminal and run:
 
 ```sh
-nix-shell -p git gnumake gnupg pass openssh
+nix-shell -p git gnumake gnupg pass openssh pinentry
 ```
 
 Make sure you're not someplace other than home.
@@ -68,7 +68,13 @@ Then, exit with `ctrl + d`.
 Set this one time to get everything cloned.
 
 ```sh
+echo use-agent > ~/.gnupg/gpg.conf
+echo enable-ssh-support > ~/.gnupg/gpg-agent.conf
+echo "pinentry-program $(which pinentry-gnome3)" >> ~/.gnupg/gpg-agent.conf
+gpg --list-keys --with-keygrip | grep '\[A\]' -A 1 | tail -n 1 | cut -d = -f 2 | tr -d ' ' > ~/.gnupg/sshcontrol
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye > /dev/null
 ```
 
 Test that you can login with your yubikey.
